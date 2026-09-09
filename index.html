@@ -9,7 +9,7 @@
 <link rel="manifest" href="manifest.json" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="icon" href="icon-192.png" />
-<meta name="theme-color" content="#181818" />
+<meta name="theme-color" content="#171717" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="SP Apply" />
@@ -18,45 +18,42 @@
   @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
   :root {
-    --ground: #f8f8f8;
+    --ground: #f6f4ef;
     --ground-raised: #ffffff;
-    --ink: #181818;
-    --ink-soft: #705e4c;
-    --line: #ebebe0;
-    --accent: #d84840;
-    --accent-soft: #fbeae8;
-    --on-accent: #ffffff;
+    --ink: #171717;
+    --ink-soft: #57544d;
+    --line: #e4e0d6;
+    --accent: #d8232a;
+    --accent-soft: #fbe9e5;
     --good: #2f7d4f;
     --good-soft: #e7f2ea;
-    --focus: #181818;
+    --focus: #171717;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --ground: #181818;
-      --ground-raised: #242220;
-      --ink: #f8f8f8;
-      --ink-soft: #b7afa0;
-      --line: #3a362f;
-      --accent: #e8635a;
+      --ground: #15140f;
+      --ground-raised: #201f18;
+      --ink: #f2efe6;
+      --ink-soft: #b3ae9f;
+      --line: #35332a;
+      --accent: #ff5b52;
       --accent-soft: #3a1c19;
-      --on-accent: #241210;
       --good: #6fca8f;
       --good-soft: #1b2e20;
-      --focus: #f8f8f8;
+      --focus: #f2efe6;
     }
   }
   :root[data-theme="dark"] {
-    --ground: #181818;
-    --ground-raised: #242220;
-    --ink: #f8f8f8;
-    --ink-soft: #b7afa0;
-    --line: #3a362f;
-    --accent: #e8635a;
+    --ground: #15140f;
+    --ground-raised: #201f18;
+    --ink: #f2efe6;
+    --ink-soft: #b3ae9f;
+    --line: #35332a;
+    --accent: #ff5b52;
     --accent-soft: #3a1c19;
-    --on-accent: #241210;
     --good: #6fca8f;
     --good-soft: #1b2e20;
-    --focus: #f8f8f8;
+    --focus: #f2efe6;
   }
 
   * { box-sizing: border-box; }
@@ -79,19 +76,6 @@
     display: flex;
     flex-direction: column;
     gap: 22px;
-  }
-  .brand {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 4px;
-  }
-  .brand img.mark { height: 34px; width: auto; display: block; }
-  .brand img.type { height: 15px; width: auto; display: block; }
-  :root[data-theme="dark"] .brand img { filter: invert(1); }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .brand img { filter: invert(1); }
   }
   .status {
     display: inline-flex;
@@ -191,7 +175,7 @@
     gap: 8px;
     width: 100%;
     background: var(--accent);
-    color: var(--on-accent);
+    color: #ffffff;
     font-family: 'Archivo', system-ui, sans-serif;
     font-weight: 700;
     font-size: 15.5px;
@@ -217,11 +201,6 @@
 <body>
 
 <div class="page">
-  <div class="brand">
-    <img class="mark" src="logomark.png" alt="" />
-    <img class="type" src="logotype.png" alt="Swisspreneur" />
-  </div>
-
   <div class="status">Applications open</div>
 
   <div>
