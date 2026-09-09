@@ -1,0 +1,14 @@
+{
+  "name": "Swisspreneur Startup Application",
+  "short_name": "SP Apply",
+  "description": "Apply for funding from Swisspreneur Syndicate",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#f6f4ef",
+  "theme_color": "#171717",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

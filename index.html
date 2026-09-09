@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Swisspreneur Startup Application</title>
+<meta name="description" content="Apply for funding from Swisspreneur Syndicate." />
+
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="icon" href="icon-192.png" />
+<meta name="theme-color" content="#171717" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="SP Apply" />
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ground: #f6f4ef;
+    --ground-raised: #ffffff;
+    --ink: #171717;
+    --ink-soft: #57544d;
+    --line: #e4e0d6;
+    --accent: #d8232a;
+    --accent-soft: #fbe9e5;
+    --on-accent: #fff8f6;
+    --good: #2f7d4f;
+    --good-soft: #e7f2ea;
+    --focus: #171717;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #15140f;
+      --ground-raised: #201f18;
+      --ink: #f2efe6;
+      --ink-soft: #b3ae9f;
+      --line: #35332a;
+      --accent: #ff5b52;
+      --accent-soft: #3a1c19;
+      --on-accent: #2a1512;
+      --good: #6fca8f;
+      --good-soft: #1b2e20;
+      --focus: #f2efe6;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #15140f;
+    --ground-raised: #201f18;
+    --ink: #f2efe6;
+    --ink-soft: #b3ae9f;
+    --line: #35332a;
+    --accent: #ff5b52;
+    --accent-soft: #3a1c19;
+    --on-accent: #2a1512;
+    --good: #6fca8f;
+    --good-soft: #1b2e20;
+    --focus: #f2efe6;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: 'Archivo', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+  }
+  img { max-width: 100%; }
+  .page {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand svg { width: 22px; height: 29px; flex-shrink: 0; }
+  .brand svg path { fill: var(--ink); }
+  .brand span {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+  }
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    align-self: flex-start;
+    padding: 5px 11px 5px 9px;
+    border-radius: 100px;
+    background: var(--good-soft);
+    color: var(--good);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  .status::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--good);
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  .sub {
+    margin: 8px 0 0;
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.55;
+    max-width: 38ch;
+  }
+  .facts {
+    display: flex;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .facts .fact {
+    flex: 1;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+  }
+  .facts .fact + .fact { border-left: 1px solid var(--line); }
+  .facts .k {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .facts .v {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    font-weight: 500;
+  }
+  .card {
+    background: var(--ground-raised);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .card img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+  }
+  .scan-hint {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background: var(--accent);
+    color: var(--on-accent);
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 15.5px;
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+  .cta:hover, .cta:focus-visible {
+    filter: brightness(1.06);
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+  .closing {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="brand">
+    <svg viewBox="0 0 46 60" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M26.149 0V19.8241H19.661V13.1474C17.4511 13.1456 15.2411 13.1456 13.0311 13.1525C12.9883 13.153 12.9454 13.1537 12.9027 13.1545C12.6365 13.1621 12.3714 13.1836 12.108 13.2222C11.6258 13.2927 11.1515 13.4171 10.6971 13.593C10.1279 13.8131 9.59044 14.1135 9.1038 14.4814C8.55598 14.8958 8.07341 15.3954 7.67847 15.957C7.28862 16.5116 6.98521 17.1262 6.78367 17.7733C6.55688 18.5016 6.46094 19.2686 6.49484 20.0304C6.52739 20.7666 6.68367 21.4963 6.9586 22.1803C7.26472 22.9419 7.71576 23.6437 8.27918 24.241C8.86922 24.8666 9.58112 25.376 10.3652 25.7302C10.9061 25.9745 11.4802 26.1443 12.067 26.2339C12.3862 26.2825 12.7084 26.3065 13.0311 26.3096C19.6008 26.3307 26.1707 26.3097 32.7404 26.3097C32.928 26.3104 33.1155 26.314 33.3028 26.3221C33.7055 26.3395 34.1076 26.3756 34.5071 26.4301C35.7214 26.596 36.9115 26.9334 38.0319 27.4293C38.8357 27.785 39.6032 28.2218 40.3191 28.7311C40.9988 29.2145 41.6319 29.763 42.207 30.3667C42.7805 30.9686 43.2961 31.625 43.7448 32.3246C44.1753 32.996 44.5441 33.7068 44.8452 34.4453C45.4194 35.8545 45.7444 37.3627 45.801 38.8832C45.8518 40.2508 45.6881 41.6257 45.3137 42.9424C44.9582 44.192 44.4141 45.3868 43.7056 46.4763C42.9079 47.7026 41.904 48.7929 40.7475 49.6897C39.6845 50.5138 38.4945 51.1729 37.2308 51.635C36.2899 51.979 35.3094 52.2138 34.3146 52.3337C33.9572 52.3767 33.5982 52.4051 33.2387 52.4188C33.0728 52.4251 32.9067 52.4278 32.7406 52.4283H26.149V59.1H19.661V39.276H26.149V45.9528C28.359 45.9545 30.5688 45.9545 32.7787 45.9476C33.046 45.945 33.313 45.9284 33.5784 45.8947C34.0766 45.8314 34.5673 45.7109 35.0378 45.5355C35.6472 45.3084 36.2216 44.9898 36.7376 44.5947C37.2724 44.1851 37.7441 43.694 38.1314 43.143C38.5212 42.5882 38.8248 41.9737 39.0263 41.3266C39.2475 40.6157 39.345 39.8677 39.3172 39.124C39.2892 38.3714 39.1308 37.6248 38.8507 36.9257C38.5458 36.1642 38.0975 35.4614 37.5351 34.8639C36.9434 34.235 36.2281 33.725 35.4402 33.3707C34.8775 33.1174 34.2791 32.9439 33.6681 32.8565C33.3726 32.8144 33.0748 32.7932 32.7765 32.7905C26.2073 32.7702 19.6381 32.7903 13.0689 32.7903C12.8472 32.7896 12.6255 32.7846 12.404 32.7734C11.9906 32.7524 11.5782 32.7121 11.1685 32.6522C9.99589 32.4808 8.84769 32.1488 7.76491 31.6678C6.99453 31.3255 6.25771 30.9085 5.56784 30.4245C4.86204 29.9296 4.20556 29.365 3.61061 28.7416C3.05109 28.1556 2.54614 27.5175 2.10442 26.8385C1.65847 26.1528 1.27709 25.4253 0.96758 24.6683C0.683157 23.973 0.459246 23.2531 0.299237 22.519C0.141431 21.7951 0.0458326 21.0578 0.0129494 20.3174C-0.0492575 18.9164 0.112786 17.5066 0.496367 16.1575C0.837403 14.9583 1.35218 13.8096 2.0195 12.7562C2.80226 11.5201 3.79333 10.4176 4.93916 9.50706C6.05414 8.62126 7.31336 7.91882 8.65429 7.43783C9.5979 7.09923 10.5807 6.8705 11.577 6.75689C11.9072 6.71914 12.2389 6.69391 12.571 6.68138C12.7369 6.67512 12.903 6.67241 13.0691 6.6719H19.661V0H26.149Z"></path>
+    </svg>
+    <span>Swisspreneur</span>
+  </div>
+
+  <div class="status">Applications open</div>
+
+  <div>
+    <h1>Swisspreneur Startup Application</h1>
+    <p class="sub">Building something worth backing? Swisspreneur Syndicate invests in early-stage Swiss startups. Tell us what you're building. We read every application ourselves.</p>
+  </div>
+
+  <div class="facts">
+    <div class="fact"><span class="k">Time</span><span class="v">~10 min</span></div>
+    <div class="fact"><span class="k">You'll need</span><span class="v">Pitch deck</span></div>
+    <div class="fact"><span class="k">Terms</span><span class="v">Equity or loan</span></div>
+  </div>
+
+  <div class="card">
+    <img src="qr.png" alt="QR code linking to the Swisspreneur startup application form" width="300" height="300" />
+    <p class="scan-hint">Scan to apply</p>
+  </div>
+
+  <a class="cta" href="https://tally.so/r/pbEYQ1" target="_blank" rel="noopener">Open the application &#8599;</a>
+
+  <p class="closing">No warm intro required. Any stage from early idea to first revenue, any industry. If it's a fit, we'll follow up to set up a call.</p>
+</div>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+  }
+</script>
+</body>
+</html>
